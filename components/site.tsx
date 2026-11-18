@@ -8,8 +8,8 @@ function Shell({ lang, other, children }: { lang: Lang; other: string; children:
     <>
       <header className="bar">
         <Link href={PATHS[lang].home} className="brand">
-          {/* eslint-disable-next-line @next/next/no-img-element -- static export serves the SVG as is */}
-          <img src="/logo.svg" alt="" width={28} height={28} />
+          {/* eslint-disable-next-line @next/next/no-img-element -- static export serves the image as is */}
+          <img src="/logo.png" alt="" width={28} height={28} />
           <span>Sports</span>
         </Link>
         <nav>
