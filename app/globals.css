@@ -1,0 +1,102 @@
+:root {
+  --bg: #fbfbfa;
+  --surface: #ffffff;
+  --text: #1d1d1f;
+  --muted: #5f6368;
+  --line: #e4e4e2;
+  --accent: #2f6f4f;
+  --accent-text: #ffffff;
+  --max: 46rem;
+  --gutter: 1rem;
+  --radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161716;
+    --surface: #1f201f;
+    --text: #ececea;
+    --muted: #a3a6a3;
+    --line: #2e302e;
+    --accent: #6fbf8f;
+    --accent-text: #0f1a13;
+  }
+  .brand img { filter: invert(1); }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+a { color: var(--accent); }
+
+.bar, main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.bar nav { display: flex; gap: 1.25rem; }
+.bar nav a { color: var(--muted); text-decoration: none; }
+.bar nav a:hover { color: var(--text); }
+
+footer.bar {
+  margin-top: 4rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.brand {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  color: var(--text);
+  font-weight: 650;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+h1 { font-size: clamp(2rem, 6vw, 2.75rem); line-height: 1.15; margin: 2.5rem 0 1rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.3rem; margin: 2.75rem 0 0.75rem; }
+
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 36rem; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+
+.button {
+  display: inline-block;
+  padding: 0.65rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 550;
+}
+.button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+
+.features { padding-left: 1.2rem; }
+.features li { margin: 0.4rem 0; }
+
+.muted { color: var(--muted); }
+
+.policy h2 { margin-top: 2.25rem; }
+.policy section > p:last-child a + a { margin-left: 1rem; }
