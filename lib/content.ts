@@ -15,7 +15,7 @@ export const PATHS: Record<Lang, { home: string; privacy: string }> = {
   de: { home: "/de/", privacy: "/de/privacy/" },
 };
 
-export const POLICY_DATE: Record<Lang, string> = { en: "18 November 2026", de: "18. November 2026" };
+export const POLICY_DATE: Record<Lang, string> = { en: "22 November 2026", de: "22. November 2026" };
 
 export const CONTROLLER = ["Trainvent, Inh. Leon Marquardt", "Ravensbergerstraße 75", "33602 Bielefeld, Germany"];
 export const CONTACT_EMAIL = "impressum@trainvent.com";
@@ -72,8 +72,9 @@ export const CONTENT = {
           heading: "Other connections",
           paragraphs: [
             "Garmin: if you connect Garmin, your device connects directly to Garmin. Your password is never saved; sign-in tokens are kept in Obsidian's secret storage, and activity summaries in your vault.",
-            "Workout files, workbooks and calendars: Sports reads files from your vault, and downloads only the workbook or calendar links you enter. These stay on your device.",
-            "Sports contains no analytics, tracking or advertising.",
+            "Workout files: if you enter a Dropbox or Nextcloud folder link, your device downloads that folder directly from Dropbox or Nextcloud. Sports reads the FIT, TCX or GPX files in memory and keeps only a summary of each workout (start time, sport, duration, distance and average heart rate) in your vault; routes are never kept.",
+            "Workbooks and calendars: Sports downloads only the workbook or calendar links you enter. Their contents stay on your device.",
+            "Sports contains no analytics or tracking, and no advertising apart from a link to GitHub Sponsors in its settings.",
           ],
         },
         {
@@ -143,8 +144,9 @@ export const CONTENT = {
           heading: "Weitere Verbindungen",
           paragraphs: [
             "Garmin: Wenn du Garmin verbindest, verbindet sich dein Gerät direkt mit Garmin. Dein Passwort wird nie gespeichert; Anmeldetoken liegen im geschützten Speicher von Obsidian, Aktivitätszusammenfassungen in deinem Vault.",
-            "Trainingsdateien, Arbeitsmappen und Kalender: Sports liest Dateien aus deinem Vault und lädt nur die Arbeitsmappen- oder Kalenderlinks herunter, die du einträgst. Diese bleiben auf deinem Gerät.",
-            "Sports enthält keine Analyse-, Tracking- oder Werbefunktionen.",
+            "Trainingsdateien: Wenn du einen Dropbox- oder Nextcloud-Ordnerlink einträgst, lädt dein Gerät diesen Ordner direkt von Dropbox oder Nextcloud herunter. Sports liest die FIT-, TCX- oder GPX-Dateien im Speicher und behält von jedem Training nur eine Zusammenfassung (Startzeit, Sportart, Dauer, Distanz und durchschnittliche Herzfrequenz) in deinem Vault; Routen werden nie gespeichert.",
+            "Arbeitsmappen und Kalender: Sports lädt nur die Arbeitsmappen- oder Kalenderlinks herunter, die du einträgst. Ihr Inhalt bleibt auf deinem Gerät.",
+            "Sports enthält keine Analyse- oder Trackingfunktionen und außer einem Link zu GitHub Sponsors in den Einstellungen keine Werbung.",
           ],
         },
         {
