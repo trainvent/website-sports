@@ -1,5 +1,12 @@
 export type Lang = "en" | "de";
 
+export const SITE_URL = "https://sports.trainvent.com";
+
+/** Canonical URL and language versions of one page; English is the fallback for other languages. */
+export function languageAlternates(lang: Lang, paths: Record<Lang, string>) {
+  return { canonical: paths[lang], languages: { en: paths.en, de: paths.de, "x-default": paths.en } };
+}
+
 export const LINKS = {
   plugin: "https://github.com/trainvent/obsidian-sports-plugin-releases",
   imprint: "https://trainvent.com/impressum/",
