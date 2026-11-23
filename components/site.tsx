@@ -2,23 +2,25 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { CONTENT, LINKS, PATHS, POLICY_DATE, type Lang } from "@/lib/content";
 
-function Shell({ lang, other, children }: { lang: Lang; other: string; children: ReactNode }) {
+export function Shell({ lang, other, wide = false, children }: { lang: Lang; other: string; wide?: boolean; children: ReactNode }) {
   const text = CONTENT[lang];
+  const width = wide ? " wide" : "";
   return (
     <>
-      <header className="bar">
+      <header className={`bar${width}`}>
         <Link href={PATHS[lang].home} className="brand">
           {/* eslint-disable-next-line @next/next/no-img-element -- static export serves the image as is */}
           <img src="/logo.png" alt="" width={28} height={28} />
           <span>Sports</span>
         </Link>
         <nav>
+          <Link href={PATHS[lang].docs}>{text.nav.docs}</Link>
           <Link href={PATHS[lang].privacy}>{text.nav.privacy}</Link>
           <Link href={other} hrefLang={lang === "en" ? "de" : "en"}>{text.switchLabel}</Link>
         </nav>
       </header>
-      <main>{children}</main>
-      <footer className="bar">
+      <main className={wide ? "wide" : undefined}>{children}</main>
+      <footer className={`bar${width}`}>
         <span>© 2026 {text.footer}</span>
         <nav>
           <Link href={PATHS[lang].privacy}>{text.nav.privacy}</Link>
@@ -38,7 +40,7 @@ export function HomePage({ lang }: { lang: Lang }) {
         <p className="lead">{text.lead}</p>
         <div className="actions">
           <a className="button primary" href={LINKS.plugin}>{text.primary}</a>
-          <a className="button" href={LINKS.docs}>{text.secondary}</a>
+          <Link className="button" href={PATHS[lang].docs}>{text.secondary}</Link>
         </div>
       </section>
       <section>

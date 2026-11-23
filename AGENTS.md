@@ -13,3 +13,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Keep the privacy policy in `lib/content.ts` accurate to what the plugin actually does. Google's
   verification reviewers compare it with the plugin and its Google Health scope; change both together.
 - Change English and German text together, and update `POLICY_DATE` when the policy changes.
+- Guide text comes from the plugin's `docs/guides_en` and `docs/guides_de` via the public releases repo.
+  Edit guides in the plugin repo, never in `content/docs/` (generated, ignored by Git).

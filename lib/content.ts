@@ -2,7 +2,6 @@ export type Lang = "en" | "de";
 
 export const LINKS = {
   plugin: "https://github.com/trainvent/obsidian-sports-plugin-releases",
-  docs: "https://github.com/trainvent/obsidian-sports-plugin-releases#readme",
   imprint: "https://trainvent.com/impressum/",
   googlePermissions: "https://myaccount.google.com/permissions",
   googleUserDataPolicy: "https://developers.google.com/terms/api-services-user-data-policy",
@@ -10,9 +9,9 @@ export const LINKS = {
   contact: "mailto:impressum@trainvent.com",
 };
 
-export const PATHS: Record<Lang, { home: string; privacy: string }> = {
-  en: { home: "/", privacy: "/privacy/" },
-  de: { home: "/de/", privacy: "/de/privacy/" },
+export const PATHS: Record<Lang, { home: string; privacy: string; docs: string }> = {
+  en: { home: "/", privacy: "/privacy/", docs: "/docs/" },
+  de: { home: "/de/", privacy: "/de/privacy/", docs: "/de/docs/" },
 };
 
 export const POLICY_DATE: Record<Lang, string> = { en: "22 November 2026", de: "22. November 2026" };
@@ -25,7 +24,8 @@ interface Section { heading: string; paragraphs: string[]; list?: readonly strin
 export const CONTENT = {
   en: {
     switchLabel: "Deutsch",
-    nav: { privacy: "Privacy", imprint: "Imprint" },
+    nav: { docs: "Docs", privacy: "Privacy", imprint: "Imprint" },
+    docs: { title: "Documentation", lead: "Set up Sports, fill in your workbook and find your way around the notes.", guides: "Guides", contents: "Contents" },
     home: {
       title: "Sports for Obsidian",
       lead: "Plan your training in a spreadsheet, record workouts with your watch, and follow your progress in your Obsidian notes.",
@@ -97,7 +97,8 @@ export const CONTENT = {
   },
   de: {
     switchLabel: "English",
-    nav: { privacy: "Datenschutz", imprint: "Impressum" },
+    nav: { docs: "Doku", privacy: "Datenschutz", imprint: "Impressum" },
+    docs: { title: "Dokumentation", lead: "Sports einrichten, die Arbeitsmappe ausfüllen und dich in den Notizen zurechtfinden.", guides: "Anleitungen", contents: "Inhalt" },
     home: {
       title: "Sports für Obsidian",
       lead: "Plane dein Training in einer Tabelle, zeichne Trainings mit deiner Uhr auf und verfolge deinen Fortschritt in deinen Obsidian-Notizen.",
